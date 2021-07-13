@@ -9,8 +9,13 @@ import React, { useState } from "react";
 // Import the Posts (plural!) and SearchBar components, since they are used inside App component
 // Import the dummyData
 import { SearchBar } from "./components/SearchBar/SearchBar";
+import { LikeSection } from "./components/Posts/LikeSection";
 import { Posts } from "./components/Posts/Posts";
 import { dummyData } from "./dummy-data";
+import { Post } from "./components/Posts/Post";
+import { PostHeader } from "./components/Posts/PostHeader";
+import { Comments } from "./components/Comments/Comments";
+import { Comment } from "./components/Comments/Comment";
 import "./App.css";
 
 const App = () => {
