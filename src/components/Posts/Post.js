@@ -17,7 +17,7 @@ const Post = (props) => {
         likePost={() => likePost(post.id)}
         numberOfLikes={post.likes}
       />
-      <comments comments={post.comments} />
+      <Comments comments={post.comments} />
     </div>
   );
 };

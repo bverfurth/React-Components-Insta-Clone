@@ -9,14 +9,7 @@ const Comments = (props) => {
   return (
     <div>
       {comments.map((comment) => {
-        return (
-          <Comment
-            key={comment.id}
-            comment={comment}
-            username={comment.username}
-            text={comment.text}
-          />
-        );
+        return <Comment comment={comment} />;
       })}
     </div>
   );
