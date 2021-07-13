@@ -2,14 +2,14 @@ import React from "react";
 import Post from "./Post";
 import "./Posts.css";
 
-export const Posts = (props) => {
+const Posts = (props) => {
   // 🔥 Make sure the parent of Posts is passing the right props!
   const { likePost, posts } = props;
 
   return (
     <div className="posts-container-wrapper">
       {posts.map((post) => {
-        return <Post key={post.id} post={post} likePost={likePost} />;
+        return <Post post={post} likePost={likePost} />;
       })}
     </div>
   );

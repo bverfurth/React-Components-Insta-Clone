@@ -8,14 +8,10 @@
 import React, { useState } from "react";
 // Import the Posts (plural!) and SearchBar components, since they are used inside App component
 // Import the dummyData
-import { SearchBar } from "./components/SearchBar/SearchBar";
-import { LikeSection } from "./components/Posts/LikeSection";
-import { Posts } from "./components/Posts/Posts";
-import { dummyData } from "./dummy-data";
-import { Post } from "./components/Posts/Post";
-import { PostHeader } from "./components/Posts/PostHeader";
-import { Comments } from "./components/Comments/Comments";
-import { Comment } from "./components/Comments/Comment";
+import SearchBar from "./components/SearchBar/SearchBar";
+import Posts from "./components/Posts/Posts";
+import dummyData from "./dummy-data";
+
 import "./App.css";
 
 const App = () => {
@@ -27,13 +23,12 @@ const App = () => {
   const likePost = (postId) => {
     setPosts(
       posts.map((post) => {
-        if (post.id === postId) {
-          return { ...post, likes: post.likes + 1 };
-        } else return post;
+        return post.id === postId ? { ...post, likes: post.likes + 1 } : post;
       })
     );
+  };
 
-    /*
+  /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
 
       The state of the app lives at the top of the React tree, but it wouldn't be fair for nested components not to be able to change state!
@@ -44,12 +39,11 @@ const App = () => {
         - if the `id` of the post matches `postId`, return a new post object with the desired values (use the spread operator).
         - otherwise just return the post object unchanged.
      */
-  };
 
   return (
     <div className="App">
-      {<SearchBar />}
-      {<Posts posts={posts} likePost={likePost} />}
+      <SearchBar />
+      <Posts posts={posts} likePost={likePost} />
     </div>
   );
 };
